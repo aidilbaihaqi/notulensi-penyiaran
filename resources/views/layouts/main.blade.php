@@ -51,6 +51,9 @@
   </div>
   <!-- container-scroller -->
 
+  {{-- Fontawesome --}}
+  <script src="{{ url('https://kit.fontawesome.com/e632a4a2d6.js') }}" crossorigin="anonymous"></script>
+
   <!-- plugins:js -->
   <script src="{{ asset('vendors/js/vendor.bundle.base.js') }}"></script>
   <!-- endinject -->
