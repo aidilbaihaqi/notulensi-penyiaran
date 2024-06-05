@@ -25,7 +25,7 @@
           <p class="my-auto">{{ Auth()->user()->name }}</p>
         </a>
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-          <a class="dropdown-item">
+          <a class="dropdown-item" href="{{ route('profile.edit') }}">
             <i class="ti-settings text-primary"></i>
             Settings 
             {{-- bakal ngarahin ke halaman ganti password --}}
