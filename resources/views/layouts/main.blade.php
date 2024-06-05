@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="{{ asset('css/vertical-layout-light/style.css') }}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" />
+
+  @yield('style')
 </head>
 <body>
   <div class="container-scroller">
