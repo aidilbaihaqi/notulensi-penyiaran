@@ -25,12 +25,16 @@ class ArsipController extends Controller
     public function store(Request $request) {
         $request->validate([
             'kode_siaran' => 'required',
-            'file_rekaman' => 'required'
+            'durasi_rekaman' => 'required',
+            'lokasi_siaran' => 'required',
+            'tamu' => 'required'
         ]);
 
         Arsip::create([
             'kode_siaran' => $request->kode_siaran,
-            'file_rekaman' => $request->file_rekaman,
+            'durasi_rekaman' => $request->durasi_rekaman,
+            'lokasi_siaran' => $request->lokasi_siaran,
+            'tamu' => $request->tamu,
             'tgl_upload' => now()
         ]);
 
@@ -49,13 +53,17 @@ class ArsipController extends Controller
     public function update(Request $request, $id) {
         $request->validate([
             'kode_siaran' => 'required',
-            'file_rekaman' => 'required'
+            'durasi_rekaman' => 'required',
+            'lokasi_siaran' => 'required',
+            'tamu' => 'required'
         ]);
 
         $data = Arsip::find($id);
         $data->update([
             'kode_siaran' => $request->kode_siaran,
-            'file_rekaman' => $request->file_rekaman,
+            'durasi_rekaman' => $request->durasi_rekaman,
+            'lokasi_siaran' => $request->lokasi_siaran,
+            'tamu' => $request->tamu,
             'tgl_upload' => now()
         ]);
 

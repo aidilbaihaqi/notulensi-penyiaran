@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('arsips', function (Blueprint $table) {
             $table->id();
             $table->string('kode_siaran')->unique();
-            $table->string('file_rekaman')->nullable(); //dibuat nullable dlu
+            $table->integer('durasi_rekaman')->default(0);
+            $table->string('lokasi_siaran');
+            $table->string('tamu');
             $table->date('tgl_upload')->default(now());
         });
     }

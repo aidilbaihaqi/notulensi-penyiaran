@@ -44,7 +44,9 @@ class DatabaseSeeder extends Seeder
         // Data Arsip
         Arsip::create([
             'kode_siaran' => 'RSR-01',
-            'file_rekaman' => 'rsr-01.mp3'
+            'durasi_rekaman' => 120,
+            'lokasi_siaran' => 'RRI Pamedan Kota Tanjungpinang',
+            'tamu' => 'Gubernur Kepulauan Riau'
         ]);
 
     }
