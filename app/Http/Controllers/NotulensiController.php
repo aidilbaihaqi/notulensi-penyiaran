@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Notulensi;
+use App\Models\Siaran;
 use Illuminate\Support\Facades\Validator;
 
 class NotulensiController extends Controller
@@ -16,19 +17,17 @@ class NotulensiController extends Controller
         ]);
     }
     public function create() {
+        $data = Siaran::all();
         return view('notulensi.create', [
-            'title' => 'Tambah Notulensi'
+            'title' => 'Tambah Notulensi',
+            'data' => $data
         ]);
     }
     public function store(Request $request) {
-        $request = Validator::make($request->all(), [
+        $request->validate([
             'kode_siaran' => 'required',
             'notulen' => 'required'
         ]);
-
-        if($request->fails()) {
-            return 'alert("Gagal validasi")';
-        }
 
         Notulensi::create($request->all());
 
@@ -37,20 +36,18 @@ class NotulensiController extends Controller
     }
     public function edit($id) {
         $data = Notulensi::findOrFail($id);
+        $siaran = Siaran::all();
         return view('notulensi.edit', [
             'title' => 'Ubah Notulensi',
-            'data' => $data
+            'data' => $data,
+            'siaran' => $siaran
         ]);
     }
     public function update(Request $request, $id) {
-        $request = Validator::make($request->all(), [
+        $request->validate([
             'kode_siaran' => 'required',
             'notulen' => 'required'
         ]);
-
-        if($request->fails()) {
-            return 'alert("Gagal validasi")';
-        }
 
         $data = Notulensi::find($id);
         $data->update($request->all());
