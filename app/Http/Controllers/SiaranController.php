@@ -21,17 +21,12 @@ class SiaranController extends Controller
         ]);
     }
     public function store(Request $request) {
-        $request = Validator::make($request->all(), [
+        $request->validate([
             'kode_siaran' => 'required|unique:siarans',
             'judul' => 'required|max:150',
             'tgl_waktu' => 'required',
-            'nama_penyiar' => 'required',
-            'status' => 'required'
+            'nama_penyiar' => 'required'
         ]);
-
-        if($request->fails()) {
-            return 'alert("Gagal validasi")';
-        }
 
         Siaran::create($request->all());
 
@@ -46,17 +41,13 @@ class SiaranController extends Controller
         ]);
     }
     public function update(Request $request, $kode_siaran) {
-        $request = Validator::make($request->all(), [
+        $request->validate([
             'kode_siaran' => 'required',
             'judul' => 'required|max:150',
             'tgl_waktu' => 'required',
             'nama_penyiar' => 'required',
             'status' => 'required'
         ]);
-
-        if($request->fails()) {
-            return 'alert("Gagal validasi")';
-        }
 
         $data = Siaran::find($kode_siaran);
         $data->update($request->all());
