@@ -26,10 +26,24 @@
               </div>
             </div>
             <div>
-              <label class="col-form-label col-md-3 col-sm-3 label-align" for="file_rekaman">File Rekaman <span class="text-secondary">(ekstensi file yang didukung: mp3)</span>
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="durasi_rekaman">Durasi Rekaman <span class="text-muted">(hitungan menit)</span>
               </label>
               <div class="col-md-6 col-sm-6 ">
-                <input type="text" id="file_rekaman" name="file_rekaman" value="{{ $data->file_rekaman }}" required="required" class="form-control ">
+                <input type="number" id="durasi_rekaman" name="durasi_rekaman" value="{{ $data->durasi_rekaman }}" required="required" class="form-control ">
+              </div>
+            </div>
+            <div>
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="lokasi_siaran">Lokasi Siaran
+              </label>
+              <div class="col-md-6 col-sm-6 ">
+                <input type="text" id="lokasi_siaran" name="lokasi_siaran" value="{{ $data->lokasi_siaran }}" required="required" class="form-control ">
+              </div>
+            </div>
+            <div>
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="tamu">Tamu
+              </label>
+              <div class="col-md-6 col-sm-6 ">
+                <input type="text" id="tamu" name="tamu" required="required" value="{{ $data->tamu }}" class="form-control ">
               </div>
             </div>
             <div class="mt-4">

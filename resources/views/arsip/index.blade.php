@@ -32,7 +32,9 @@
                 <th>#</th>
                 <th>ID</th>
                 <th>Kode Siaran</th>
-                <th>File Rekaman</th>
+                <th>Durasi Rekaman</th>
+                <th>Lokasi Siaran</th>
+                <th>Tamu</th>
                 <th>Tanggal Upload (akan berubah jika diupdate)</th>
               </tr>
             </thead>
@@ -45,7 +47,9 @@
                   </td>
                   <td>{{ $loop->iteration }}</td>
                   <td><a href="{{ route('siaran.index') }}"><span class="font-weight-bold text-primary">{{ $d->kode_siaran }}</span></a></td>
-                  <td>{{ $d->file_rekaman }}</td>
+                  <td>{{ $d->durasi_rekaman }} menit</td>
+                  <td>{{ $d->lokasi_siaran }}</td>
+                  <td>{{ $d->tamu }}</td>
                   <td>{{ $d->tgl_upload }}</td>
                 </tr>
               @endforeach

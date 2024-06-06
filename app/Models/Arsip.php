@@ -15,7 +15,8 @@ class Arsip extends Model
     public $timestamps = false;
     protected $fillable = [
         'kode_siaran',
-        'file_rekaman',
-        'tgl_upload'
+        'durasi_rekaman',
+        'lokasi_siaran',
+        'tamu'
     ];
 }
